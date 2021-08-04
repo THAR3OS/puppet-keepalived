@@ -19,7 +19,7 @@ class keepalived::config {
     owner   => 0,
     group   => 0,
     mode    => '0644',
-    content => template("keepalived/keepalived.${keepalived::sysconf_dir}.erb"),
+    content => template($::keepalived::custom_template_keepalived_conf),
   }
 
   file { $keepalived::config_dir:

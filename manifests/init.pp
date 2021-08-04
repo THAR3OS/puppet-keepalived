@@ -24,6 +24,15 @@ class keepalived (
   String[1]               $service_name       = 'keepalived',
   Optional[String[1]]     $service_restart    = undef,
 
+  # new to fork: allow user to customize all erb files to use other templates with module
+  Optional[String[1]] $custom_template_keepalived_conf    = "keepalived/keepalived.${sysconf_dir}.erb",
+  Optional[String[1]] $custom_template_globaldefs         = 'keepalived/globaldefs.erb',
+  Optional[String[1]] $custom_template_vrrp_instance      = 'keepalived/vrrp_instance.erb',
+  Optional[String[1]] $custom_template_vrrp_sync_group    = 'keepalived/vrrp_sync_group.erb',
+  Optional[String[1]] $custom_template_vrrp_script        = 'keepalived/vrrp_script.erb',
+  Optional[String[1]] $custom_template_lvs_virtual_server = 'keepalived/lvs_virtual_server.erb',
+  Optional[String[1]] $custom_template_lvs_real_server    = 'keepalived/lvs_real_server.erb',
+
   Hash $vrrp_instance      = {},
   Hash $vrrp_script        = {},
   Hash $vrrp_track_process = {},

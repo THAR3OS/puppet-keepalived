@@ -40,7 +40,7 @@ define keepalived::vrrp::sync_group (
 
   concat::fragment { "keepalived.conf_vrrp_sync_group_${_name}":
     target  => "${keepalived::config_dir}/keepalived.conf",
-    content => template('keepalived/vrrp_sync_group.erb'),
+    content => template($::keepalived::custom_template_vrrp_sync_group),
     order   => '050',
   }
 }

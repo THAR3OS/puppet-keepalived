@@ -82,7 +82,7 @@ class keepalived::global_defs (
 ) {
   concat::fragment { 'keepalived.conf_globaldefs':
     target  => "${keepalived::config_dir}/keepalived.conf",
-    content => template('keepalived/globaldefs.erb'),
+    content => template($::keepalived::custom_template_globaldefs),
     order   => '010',
   }
 }

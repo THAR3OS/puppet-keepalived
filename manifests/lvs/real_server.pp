@@ -40,7 +40,7 @@ define keepalived::lvs::real_server (
 
   concat::fragment { "keepalived.conf_lvs_real_server_${_name}":
     target  => "${keepalived::config_dir}/keepalived.conf",
-    content => template('keepalived/lvs_real_server.erb'),
+    content => template($::keepalived::custom_template_lvs_real_server),
     order   => "250-${virtual_server}-${_name}",
   }
 }

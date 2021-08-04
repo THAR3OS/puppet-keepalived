@@ -156,7 +156,7 @@ define keepalived::lvs::virtual_server (
 
   concat::fragment { "keepalived.conf_lvs_virtual_server_${_name}":
     target  => "${keepalived::config_dir}/keepalived.conf",
-    content => template('keepalived/lvs_virtual_server.erb'),
+    content => template($::keepalived::custom_template_lvs_virtual_server),
     order   => "250-${_name}-000",
   }
 

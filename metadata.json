@@ -17,16 +17,6 @@
       "version_requirement": ">= 4.25.1 < 8.0.0"
     }
   ],
-  "description": "Keepalived vrrp and lvs failover module",
-  "tags": [
-    "keepalived",
-    "vrrp",
-    "lvs",
-    "failover",
-    "loadbalancing",
-    "stonith",
-    "ipvs"
-  ],
   "operatingsystem_support": [
     {
       "operatingsystem": "Debian",
@@ -59,5 +49,18 @@
       "name": "puppet",
       "version_requirement": ">= 6.1.0 < 8.0.0"
     }
-  ]
+  ],
+  "description": "Keepalived vrrp and lvs failover module",
+  "tags": [
+    "keepalived",
+    "vrrp",
+    "lvs",
+    "failover",
+    "loadbalancing",
+    "stonith",
+    "ipvs"
+  ],
+  "pdk-version": "2.1.1",
+  "template-url": "pdk-default#2.1.1",
+  "template-ref": "tags/2.1.1-0-g03daa92"
 }

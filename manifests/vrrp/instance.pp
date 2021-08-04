@@ -217,7 +217,7 @@ define keepalived::vrrp::instance (
 
   concat::fragment { "keepalived.conf_vrrp_instance_${_name}":
     target  => "${keepalived::config_dir}/keepalived.conf",
-    content => template('keepalived/vrrp_instance.erb'),
+    content => template($::keepalived::custom_template_vrrp_instance),
     order   => "100-${_name}-000",
   }
 
